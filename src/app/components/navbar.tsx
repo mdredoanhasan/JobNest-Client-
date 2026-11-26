@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ChevronUp, Menu } from "lucide-react";
+import {Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -9,6 +9,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import Image from "next/image";
 
 const links = [
   { label: "Jobs", href: "/jobs" },
@@ -21,9 +22,15 @@ function Logo() {
   return (
     <Link href="/" className="flex items-center gap-2.5">
       <span className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/20 bg-white/10 text-slate-100 shadow-inner">
-        <ChevronUp className="h-5 w-5" strokeWidth={2.5} />
+        <Image
+          src="/logo/logo.png"
+          width={24}
+          height={24}
+          alt="JobNest Logo"
+          className="h-6 w-6"
+        />
       </span>
-      <span className="text-[17px] font-bold tracking-tight text-white">
+      <span className="text-[20px] pr-60 font-bold tracking-tight text-white">
         JobNest
       </span>
     </Link>
@@ -32,17 +39,17 @@ function Logo() {
 
 export default function Navbar() {
   return (
-    <header className="sticky pl-80 top-0 z-50 w-full border-b border-white/10 bg-linear-to-r from-slate-900/70 via-slate-800/60 to-slate-700/50 backdrop-blur-xl supports-[backdrop-filter]:bg-slate-900/50">
-      <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <header className="sticky  top-0 z-50 w-full border-b border-white/10 bg-linear-to-r  from-slate-800 via-slate-700 to-slate-600 backdrop-blur-xl supports-backdrop-filter:bg-slate-900/50">
+      <nav className="mx-auto flex h-16  max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Logo />
 
         {/* Desktop links */}
-        <ul className="hidden items-center gap-8 md:flex">
+        <ul className="hidden  pr-60 items-center gap-8 md:flex">
           {links.map((link) => (
             <li key={link.label}>
               <Link
                 href={link.href}
-                className="text-sm font-medium text-slate-200 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 rounded-sm"
+                className="text-[17px] font-medium text-slate-200 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 rounded-sm"
               >
                 {link.label}
               </Link>
@@ -62,7 +69,7 @@ export default function Navbar() {
             
             className="rounded-xl bg-slate-400/80 px-5 text-white hover:bg-slate-300/90"
           >
-            <Link href="/get-started">Get started</Link>
+            <Link href="/sign-up">Get started</Link>
           </Button>
         </div>
 
@@ -96,14 +103,14 @@ export default function Navbar() {
               <div className="mt-4 flex flex-col gap-3">
                 <Button
                   variant="outline"
-                  className="rounded-xl border-slate-500/60 bg-slate-900/40 text-slate-100 hover:bg-slate-800/70 hover:text-white"
+                  className="rounded-xl  border-slate-500/60 bg-slate-900/40 text-slate-100 hover:bg-slate-800/70 hover:text-white"
                 >
                   <Link href="/sign-in">Sign in</Link>
                 </Button>
                 <Button
                   className="rounded-xl bg-slate-400/80 text-white hover:bg-slate-300/90"
                 >
-                  <Link href="/get-started">Get started</Link>
+                  <Link href="/sign-up">Get started</Link>
                 </Button>
               </div>
             </div>
